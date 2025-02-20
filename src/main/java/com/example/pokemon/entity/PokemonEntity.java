@@ -22,9 +22,9 @@ public class PokemonEntity {
     private String nombre;
     private String tipo;
     @Column(nullable = true)
-    private Boolean indEvolucion;
+    private Boolean indevolucion;
     @Column(nullable = true)
-    private Integer nvlEvolucion;
+    private Integer nvlevolucion;
 
     public Long getId() {
         return id;
@@ -45,17 +45,17 @@ public class PokemonEntity {
         this.tipo = tipo;
     }
 
-    public Boolean isIndEvolucion() {
-        return indEvolucion;
+    public Boolean getIndevolucion() {
+        return indevolucion;
     }
-    public void setIndEvolucion(Boolean indEvolucion) {
-        this.indEvolucion = indEvolucion;
+    public void setIndevolucion(Boolean indevolucion) {
+        this.indevolucion = indevolucion;
     }
-    public Integer getNvlEvolucion() {
-        return nvlEvolucion;
+    public Integer getNvlevolucion() {
+        return nvlevolucion;
     }
-    public void setNvlEvolucion(Integer nvlEvolucion) {
-        this.nvlEvolucion = nvlEvolucion;
+    public void setNvlevolucion(Integer nvlevolucion) {
+        this.nvlevolucion = nvlevolucion;
     }
     // Sobrescribir el método toString()
     @Override

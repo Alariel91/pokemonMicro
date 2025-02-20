@@ -15,8 +15,8 @@ public interface PokemonMapper {
     @Mapping(target = "idPokemon" , source = "pokemonEntity.id")
     @Mapping(target = "nombrePokemon" , source = "pokemonEntity.nombre")
     @Mapping(target = "tipoPokemon" , source = "pokemonEntity.tipo")
-    @Mapping(target = "indEvolucionPokemon" , source = "pokemonEntity.indEvolucion")
-    @Mapping(target = "nvlEvolucionPokemon" , source = "pokemonEntity.nvlEvolucion")
+    @Mapping(target = "indEvolucionPokemon" , source = "pokemonEntity.indevolucion")
+    @Mapping(target = "nvlEvolucionPokemon" , source = "pokemonEntity.nvlevolucion")
     PokemonDto pokemonEntityToPokemonDto (PokemonEntity pokemonEntity);
 
     List<PokemonDto> pokemonEntityToPokemonDto (List<PokemonEntity>  pokemonDto);

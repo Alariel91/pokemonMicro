@@ -17,11 +17,11 @@ public class PokemonRepositoryTest {
     public void guardarPokemon(){
       
         PokemonEntity pokemon = new PokemonEntity(); 
-        pokemon.setId(1L);
+        pokemon.setId(152L);
         pokemon.setNombre("Ivysaur");
         pokemon.setTipo("planta");
-        pokemon.setIndEvolucion(true);
-        pokemon.setNvlEvolucion(40);
+        pokemon.setIndevolucion(true);
+        pokemon.setNvlevolucion(40);
         pokemonRepository.save(pokemon);
     }
 
