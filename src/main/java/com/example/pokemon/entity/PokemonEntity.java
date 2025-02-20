@@ -44,22 +44,23 @@ public class PokemonEntity {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-
-    public Boolean getIndevolucion() {
-        return indevolucion;
-    }
-    public void setIndevolucion(Boolean indevolucion) {
-        this.indevolucion = indevolucion;
-    }
     public Integer getNvlevolucion() {
         return nvlevolucion;
     }
     public void setNvlevolucion(Integer nvlevolucion) {
         this.nvlevolucion = nvlevolucion;
     }
+
     // Sobrescribir el método toString()
     @Override
     public String toString() {
-        return "ID: " + id + "Nombre: " + nombre + ", Tipo: " + tipo + ", indEvolucion: " + indEvolucion + ", nvlEvolucion: " + nvlEvolucion;
+        return "ID: " + id + "Nombre: " + nombre + ", Tipo: " + tipo + ", indEvolucion: " + indevolucion + ", nvlEvolucion: " + nvlevolucion;
     }
+    public Boolean getIndevolucion() {
+        return indevolucion;
+    }
+    public void setIndevolucion(Boolean indevolucion) {
+        this.indevolucion = indevolucion;
+    }
+
 }
