@@ -7,8 +7,8 @@ import com.example.pokemon.entity.PokemonEntity;
 public interface PokemonService {
 
     List<PokemonEntity> findAllPokemons();
-    PokemonEntity findPokemonById(Long id);
+    PokemonEntity findPokemonById(Integer id);
     PokemonEntity savePokemon(PokemonEntity pokemon);
-    PokemonEntity updatePokemon(Long id, PokemonEntity pokemon);
-    void deletePokemon(Long id);
+    PokemonEntity updatePokemon(Integer id, PokemonEntity pokemon);
+    void deletePokemon(Integer id);
 }

@@ -16,11 +16,12 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public List<PokemonEntity> findAllPokemons() {
+        
        return pokemonRepository.findAll();
     }
 
     @Override
-    public PokemonEntity findPokemonById(Long id) {
+    public PokemonEntity findPokemonById(Integer id) {
         Optional<PokemonEntity> pokemonOptional = pokemonRepository.findById(id);
         return pokemonOptional.orElseThrow();
     }
@@ -31,16 +32,16 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
-    public PokemonEntity updatePokemon(Long id, PokemonEntity pokemon) {
+    public PokemonEntity updatePokemon(Integer id, PokemonEntity pokemon) {
         Optional<PokemonEntity> pokemonOptional = pokemonRepository.findById(id);
         PokemonEntity pokemonDB = pokemonOptional.orElseThrow();
-        pokemonDB.setNombre(pokemon.getNombre());
-        pokemonDB.setTipo(pokemon.getTipo());
+        pokemonDB.setName(pokemon.getName());
+        pokemonDB.setType(pokemon.getType());
         return pokemonRepository.save(pokemonDB);
     }
 
     @Override
-    public void deletePokemon(Long id) {
+    public void deletePokemon(Integer id) {
          pokemonRepository.deleteById(id);
     }
 

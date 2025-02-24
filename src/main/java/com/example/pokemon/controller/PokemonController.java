@@ -3,6 +3,7 @@ package com.example.pokemon.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import com.example.pokemon.entity.PokemonEntity;
 import com.example.pokemon.mapper.PokemonMapper;
 import com.example.pokemon.service.PokemonService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/pokemon")
 public class PokemonController {
@@ -31,7 +33,7 @@ public class PokemonController {
     }
 
     @GetMapping("/getPokemon/{id}")
-    public PokemonDto getPokemonById(@PathVariable Long id){
+    public PokemonDto getPokemonById(@PathVariable Integer id){
         return mapper.pokemonEntityToPokemonDto(pokemonService.findPokemonById(id));
     }
 
@@ -41,12 +43,12 @@ public class PokemonController {
     }
 
     @PutMapping("/updatePokemon/{id}")
-    public PokemonDto updatePokemon(@PathVariable Long id,@RequestBody PokemonEntity pokemonEntity){
+    public PokemonDto updatePokemon(@PathVariable Integer id,@RequestBody PokemonEntity pokemonEntity){
         return mapper.pokemonEntityToPokemonDto(pokemonService.updatePokemon(id,pokemonEntity));
     }
 
     @DeleteMapping("/deletePokemon/{id}")
-    public void deletePokemon(@PathVariable Long id){
+    public void deletePokemon(@PathVariable Integer id){
         pokemonService.deletePokemon(id);
     }
 }

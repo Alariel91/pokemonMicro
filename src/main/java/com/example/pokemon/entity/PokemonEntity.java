@@ -4,8 +4,6 @@ import org.springframework.context.annotation.Description;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -16,51 +14,42 @@ import jakarta.persistence.Table;
 @Description("Pokedex")
 public class PokemonEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String nombre;
-    private String tipo;
+    private Integer id;
+    private String name;
+    private String type;
     @Column(nullable = true)
-    private Boolean indevolucion;
-    @Column(nullable = true)
-    private Integer nvlevolucion;
+    private Integer evolutionlevel;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
-    public String getNombre() {
-        return nombre;
+   
+    public String getName() {
+        return name;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getTipo() {
-        return tipo;
+    public String getType() {
+        return type;
     }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setType(String type) {
+        this.type = type;
     }
-    public Integer getNvlevolucion() {
-        return nvlevolucion;
+    public Integer getEvolutionLevel() {
+        return evolutionlevel;
     }
-    public void setNvlevolucion(Integer nvlevolucion) {
-        this.nvlevolucion = nvlevolucion;
+    public void setEvolutionLevel(Integer evolutionlevel) {
+        this.evolutionlevel = evolutionlevel;
     }
 
     // Sobrescribir el método toString()
     @Override
     public String toString() {
-        return "ID: " + id + "Nombre: " + nombre + ", Tipo: " + tipo + ", indEvolucion: " + indevolucion + ", nvlEvolucion: " + nvlevolucion;
-    }
-    public Boolean getIndevolucion() {
-        return indevolucion;
-    }
-    public void setIndevolucion(Boolean indevolucion) {
-        this.indevolucion = indevolucion;
+        return "ID: " + id + "Name: " + name + ", Type: " + type + ", evolutionLevel: " + evolutionlevel;
     }
 
 }

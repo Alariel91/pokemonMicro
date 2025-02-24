@@ -2,41 +2,43 @@ package com.example.pokemon.dto;
 
 public class PokemonDto {
 
-    private Long idPokemon;
-    private String nombrePokemon;
-    private String tipoPokemon;
-    private boolean indEvolucionPokemon;
-    private int nvlEvolucionPokemon;
-    public Long getIdPokemon() {
+    private Integer idPokemon;
+    private String namePokemon;
+    private String typePokemon;
+    private Integer evolutionLevelPokemon;
+    private Boolean evolutionIndicatorPokemon;
+
+    public Boolean getEvolutionIndicatorPokemon() {
+        return evolutionIndicatorPokemon;
+    }
+    public void setEvolutionIndicatorPokemon(Boolean evolutionIndicatorPokemon) {
+        this.evolutionIndicatorPokemon = evolutionIndicatorPokemon;
+    }
+    public Integer getIdPokemon() {
         return idPokemon;
     }
-    public void setIdPokemon(Long idPokemon) {
+    public void setIdPokemon(Integer idPokemon) {
         this.idPokemon = idPokemon;
     }
-    public String getNombrePokemon() {
-        return nombrePokemon;
+    public String getNamePokemon() {
+        return namePokemon;
     }
-    public void setNombrePokemon(String nombrePokemon) {
-        this.nombrePokemon = nombrePokemon;
+    public void setNamePokemon(String namePokemon) {
+        this.namePokemon = namePokemon;
     }
-    public String getTipoPokemon() {
-        return tipoPokemon;
+    public String getTypePokemon() {
+        return typePokemon;
     }
-    public void setTipoPokemon(String tipoPokemon) {
-        this.tipoPokemon = tipoPokemon;
+    public void setTypePokemon(String typePokemon) {
+        this.typePokemon = typePokemon;
     }
-    public boolean isIndEvolucionPokemon() {
-        return indEvolucionPokemon;
+    public int getEvolutionLevelPokemon() {
+        return evolutionLevelPokemon;
     }
-    public void setIndEvolucionPokemon(boolean indEvolucionPokemon) {
-        this.indEvolucionPokemon = indEvolucionPokemon;
+    public void setEvolutionLevelPokemon(int evolutionLevelPokemon) {
+        this.evolutionLevelPokemon = evolutionLevelPokemon;
     }
-    public int getNvlEvolucionPokemon() {
-        return nvlEvolucionPokemon;
-    }
-    public void setNvlEvolucionPokemon(int nvlEvolucionPokemon) {
-        this.nvlEvolucionPokemon = nvlEvolucionPokemon;
-    }
+    
 
     
 }

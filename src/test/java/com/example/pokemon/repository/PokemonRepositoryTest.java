@@ -24,10 +24,9 @@ public class PokemonRepositoryTest {
     public void guardarPokemon() {
         // Crear el Pokémon que vamos a guardar
         PokemonEntity pokemon = new PokemonEntity();
-        pokemon.setNombre("Ivysaur");
-        pokemon.setTipo("planta");
-        pokemon.setIndevolucion(true);
-        pokemon.setNvlevolucion(40);
+        pokemon.setName("Ivysaur");
+        pokemon.setType("planta");
+        pokemon.setEvolutionLevel(40);
 
         // Guardar el Pokémon
         PokemonEntity newPokemon = pokemonRepository.save(pokemon);
@@ -39,15 +38,15 @@ public class PokemonRepositoryTest {
         // Verificar que el Pokémon guardado es el mismo que se ha recuperado
         PokemonEntity foundPokemon = pokemonRepository.findById(newPokemon.getId()).orElse(null);
         assertThat(foundPokemon).isNotNull();
-        assertThat(foundPokemon.getNombre()).isEqualTo("Ivysaur");
-        assertThat(foundPokemon.getTipo()).isEqualTo("planta");
-        assertThat(foundPokemon.getIndevolucion()).isTrue();
-        assertThat(foundPokemon.getNvlevolucion()).isEqualTo(40);
+        assertThat(foundPokemon.getName()).isEqualTo("Ivysaur");
+        assertThat(foundPokemon.getType()).isEqualTo("planta");
+        //assertThat(foundPokemon.getIndevolucion()).isTrue();
+        assertThat(foundPokemon.getEvolutionLevel()).isEqualTo(40);
     }
 
     @Test
     public void getAllPokemons(){
-        List<PokemonEntity> pokemonList = pokemonRepository.getAllPokemons();
+        List<PokemonEntity> pokemonList = pokemonRepository.findAll();
         pokemonList.forEach(System.out::println);
 
     }

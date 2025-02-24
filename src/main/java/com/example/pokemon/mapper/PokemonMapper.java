@@ -13,13 +13,13 @@ import com.example.pokemon.entity.PokemonEntity;
 )
 public interface PokemonMapper {
     @Mapping(target = "idPokemon" , source = "pokemonEntity.id")
-    @Mapping(target = "nombrePokemon" , source = "pokemonEntity.nombre")
-    @Mapping(target = "tipoPokemon" , source = "pokemonEntity.tipo")
-    @Mapping(target = "indEvolucionPokemon" , source = "pokemonEntity.indevolucion")
-    @Mapping(target = "nvlEvolucionPokemon" , source = "pokemonEntity.nvlevolucion")
+    @Mapping(target = "namePokemon" , source = "pokemonEntity.name")
+    @Mapping(target = "typePokemon" , source = "pokemonEntity.type")
+    @Mapping(target = "evolutionLevelPokemon", source = "pokemonEntity.evolutionLevel", defaultValue = "0")
+    @Mapping(target = "evolutionIndicatorPokemon", expression = "java( pokemonEntity.getEvolutionLevel() != null ? true : false )")
+
     PokemonDto pokemonEntityToPokemonDto (PokemonEntity pokemonEntity);
 
     List<PokemonDto> pokemonEntityToPokemonDto (List<PokemonEntity>  pokemonDto);
-      
     
 }
